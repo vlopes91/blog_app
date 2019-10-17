@@ -33,15 +33,6 @@ const blogSchema = {
 
 const Posts = new mongoose.model('post', blogSchema);
 
-const post1 = new Posts({
-  title: 'First Blog Post',
-  content: 'This is the first post of the blog'
-})
-
-// post1.save();
-
-// let posts = [];
-
 app.get("/", function (req, res) {
 
   Posts.find({}, (err, posts) => {
