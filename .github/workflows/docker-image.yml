@@ -15,7 +15,7 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag vlopes91/blog_app:$(date +%d%m%Y)
+      run: docker build . --file Dockerfile --tag vlopes91/blog_app:latest
       
     - name: Login to DockerHub
       uses: docker/login-action@v1 
@@ -27,4 +27,4 @@ jobs:
       uses: docker/build-push-action@v2
       with:
         push: true
-        tags: vlopes91/blog_app:$(date +%d%m%Y)  
+        tags: vlopes91/blog_app:latest
